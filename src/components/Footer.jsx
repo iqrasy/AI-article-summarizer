@@ -10,10 +10,7 @@ const Footer = () => {
 			<Container>
 				<Row>
 					<Col>
-						<p>Built and Designed by Iqra Imran Syed</p>
-					</Col>
-					<Col>
-						<p>Copyright © {year} </p>
+						<p>Built and Designed by Iqra Imran Syed {year}</p>
 					</Col>
 				</Row>
 			</Container>
@@ -43,6 +40,5 @@ const FooterContainer = styled.footer`
 		width: 85%;
 		text-align: center;
 		font-size: 0.6rem;
-
 	}
 `;
