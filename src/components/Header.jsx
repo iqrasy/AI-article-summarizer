@@ -6,17 +6,9 @@ const Header = () => {
 	return (
 		<Headers>
 			<Nav className="navbar navbar-light bg-light">
-				<div style={{ display: "flex", alignItems: "center" }}>
+				<div>
 					<RiTreeLine style={{ color: "#d5cfcf", fontSize: "1.5rem" }} />
-					<h5
-						style={{
-							marginLeft: "0.5rem",
-							marginTop: ".5rem",
-							color: "#d5cfcf",
-						}}
-					>
-						SUMMX
-					</h5>
+					<h5>SUMMX</h5>
 				</div>
 				<button
 					className="btn btn-outline-light"
@@ -48,5 +40,16 @@ const Nav = styled.nav`
 
 	button {
 		cursor: pointer;
+	}
+
+	h5 {
+		margin-left: 0.5rem;
+		margin-top: 0.5rem;
+		color: #d5cfcf;
+	}
+
+	div {
+		display: flex;
+		align-items: center;
 	}
 `;

@@ -133,10 +133,9 @@ const Hone = styled.h1`
 `;
 
 const Htwo = styled.h2`
-	margin-top: 1.25rem;
+	padding-top: 1rem;
 	font-size: 1rem;
-	font-weight: 300;
-	color: #bdbdbd;
+	color: #c1bebe;
 	text-align: center;
 	margin: 0 auto;
 	max-width: 36rem;
@@ -153,7 +152,7 @@ const Form = styled.form`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 5rem;
+	margin-top: 3rem;
 	position: relative;
 
 	button {
