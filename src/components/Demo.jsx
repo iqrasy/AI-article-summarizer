@@ -49,7 +49,7 @@ const Demo = () => {
 				<Span> OpenAI GPT-4</Span>
 			</Hone>
 			<Htwo>
-				Simplify your reading with Summary, an article sumarizer that transforms
+				Simplify your reading with SUMMX, an article sumarizer that transforms
 				lengthy artices into clear and concise summaries
 			</Htwo>
 			<History>
