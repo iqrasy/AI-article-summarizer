@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { loader } from "../assets";
-import { useLazyGetSummaryQuery } from "./Article";
+import { useLazyGetSummaryQuery } from "./FetchApi";
 import styled from "styled-components";
 import { LuCopy } from "react-icons/lu";
 import { BsCheck } from "react-icons/bs";
 
-const Demo = () => {
+const Main = () => {
 	const [article, setArticle] = useState({ url: "", summary: "" });
 	const [allArticles, setAllArticles] = useState([]);
 	const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
@@ -120,7 +120,7 @@ const Demo = () => {
 	);
 };
 
-export default Demo;
+export default Main;
 
 const Hone = styled.h1`
 	margin: 0 auto;

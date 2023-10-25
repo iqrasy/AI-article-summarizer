@@ -1,6 +1,6 @@
 // import React from "react";
 import Header from "./Header";
-import Demo from "./Demo";
+import Main from "./Main";
 import styled from "styled-components";
 import GlobalStyles from "./Globalstyle";
 import Footer from "./Footer";
@@ -10,12 +10,12 @@ const App = () => {
 		<>
 			<main>
 				<GlobalStyles />
-				<Main>
+				<Mains>
 					<Apps>
 						<Header />
-						<Demo />
+						<Main />
 					</Apps>
-				</Main>
+				</Mains>
 				<Foot>
 					<Footer />
 				</Foot>
@@ -26,7 +26,7 @@ const App = () => {
 
 export default App;
 
-const Main = styled.div`
+const Mains = styled.div`
 	width: 100vw;
 	min-height: 100vh;
 	position: fixed;
