@@ -1,6 +1,20 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+:root {
+    --primary-100:#FF6600;
+    --primary-200:#ff983f;
+    --primary-300:#ffffa1;
+    --accent-100:#F5F5F5;
+    --accent-200:#929292;
+    --text-100:#FFFFFF;
+    --text-200:#e0e0e0;
+    --bg-100:#1D1F21;
+    --bg-200:#2c2e30;
+    --bg-300:#444648;
+      
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,37 +22,17 @@ const GlobalStyles = createGlobalStyle`
 }
 
 html {
-    scroll-behavior: smooth;
-
+   scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-  width: 0.4rem;
-  height: 1rem;
 
-}
-::-webkit-scrollbar-track {
-  background: #343541;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(217,217,227,.8);
-  border-color: rgba(255,255,255);
-  border-radius: 1rem;
-  border-width: 1px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(217,217,227,.9);
-
-}
 
 body {
-    background-color: #0d1b2a;
-    overflow-y: auto;
+    background-color: var(--bg-100);
+    /* overflow-y: scroll; */
     height: 100vh;
     font-family: 'Nanum Gothic Coding', monospace;
-    font-weight: bold;
+    color: white;
 }
 
 `;

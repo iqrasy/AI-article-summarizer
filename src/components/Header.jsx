@@ -8,9 +8,9 @@ const Header = () => {
 			<Nav className="navbar navbar-light bg-light">
 				<div>
 					<RiTreeLine style={{ color: "#d5cfcf", fontSize: "1.5rem" }} />
-					<h5>SUMMX</h5>
+					<h5>QUICK INSIGHTS</h5>
 				</div>
-				<button
+				{/* <button
 					className="btn btn-outline-light"
 					type="button"
 					onClick={() => {
@@ -18,7 +18,7 @@ const Header = () => {
 					}}
 				>
 					Github
-				</button>
+				</button> */}
 			</Nav>
 		</Headers>
 	);
@@ -29,7 +29,7 @@ export default Header;
 const Headers = styled.header`
 	width: 100%;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 `;
 
 const Nav = styled.nav`

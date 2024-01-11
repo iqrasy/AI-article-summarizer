@@ -7,29 +7,22 @@ import Footer from "./Footer";
 
 const App = () => {
 	return (
-		<>
-			<main>
-				<GlobalStyles />
-				<Mains>
-					<Apps>
-						<Header />
-						<Main />
-					</Apps>
-				</Mains>
-				<Foot>
-					<Footer />
-				</Foot>
-			</main>
-		</>
+		<div>
+			<GlobalStyles />
+			<Header />
+			<Mains>
+				<Apps>
+					<Main />
+				</Apps>
+			</Mains>
+			<Footer />
+		</div>
 	);
 };
 
 export default App;
 
 const Mains = styled.div`
-	width: 100vw;
-	min-height: 100vh;
-	position: fixed;
 	display: flex;
 	justify-content: center;
 
@@ -49,26 +42,11 @@ const Mains = styled.div`
 		position: absolute;
 		width: 100%;
 		height: 100%;
-		opacity: 0.4;
+		opacity: 1;
 		filter: invert(1);
 	}
 `;
 
 const Apps = styled.div`
-	width: 70%;
-	max-width: 90%;
 	z-index: 10;
-	align-items: center;
-	flex-direction: column;
-	display: flex;
-`;
-
-const Foot = styled.div`
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 `;

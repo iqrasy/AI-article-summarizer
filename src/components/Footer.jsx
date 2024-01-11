@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Container, Row, Col } from "react-bootstrap";
 
 const Footer = () => {
 	const date = new Date();
@@ -7,13 +6,9 @@ const Footer = () => {
 
 	return (
 		<FooterContainer>
-			<Container>
-				<Row>
-					<Col>
-						<p>Built and Designed by Iqra Imran Syed {year}</p>
-					</Col>
-				</Row>
-			</Container>
+			<div>
+				<p>Built and Designed by Iqra Imran Syed {year}</p>
+			</div>
 		</FooterContainer>
 	);
 };
@@ -21,23 +16,17 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.footer`
-	bottom: 0;
-	width: 40%;
-	text-align: center;
+	width: 100%;
 	font-size: 0.7rem;
 	color: #bdbdbd;
-
-	ul {
-		display: block;
-		justify-content: center;
-		align-items: center;
-		margin: 0;
-		padding: 0;
-	}
+	padding: 1rem;
+	text-align: center;
+	flex-wrap: wrap;
+	margin-top: 3rem;
 
 	@media only screen and (max-width: 480px) {
 		bottom: 0;
-		width: 85%;
+		width: 100%;
 		text-align: center;
 		font-size: 0.6rem;
 	}
