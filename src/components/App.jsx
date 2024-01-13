@@ -1,4 +1,3 @@
-// import React from "react";
 import Header from "./Header";
 import Main from "./Main";
 import styled from "styled-components";
@@ -26,24 +25,19 @@ const Mains = styled.div`
 	display: flex;
 	justify-content: center;
 
-	&:before {
-		position: absolute;
-		content: "";
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		top: 0;
-	}
-
 	&:after {
 		content: "";
 		background-image: url("/src/assets/grid.svg");
-		z-index: 1;
-		position: absolute;
+		z-index: -10;
+		position: fixed;
 		width: 100%;
-		height: 100%;
+		height: 100vh;
 		opacity: 1;
 		filter: invert(1);
+	}
+
+	@media only screen and (max-width: 480px) {
+		height: 100svh;
 	}
 `;
 

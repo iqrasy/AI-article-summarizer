@@ -16,18 +16,20 @@ const Footer = () => {
 export default Footer;
 
 const FooterContainer = styled.footer`
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
 	width: 100%;
 	font-size: 0.7rem;
-	color: #bdbdbd;
-	padding: 1rem;
+	color: var(--accent-200);
 	text-align: center;
 	flex-wrap: wrap;
-	margin-top: 3rem;
 
 	@media only screen and (max-width: 480px) {
-		bottom: 0;
-		width: 100%;
+		position: absolute;
 		text-align: center;
 		font-size: 0.6rem;
+		bottom: -4rem;
 	}
 `;

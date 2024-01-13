@@ -29,10 +29,14 @@ html {
 
 body {
     background-color: var(--bg-100);
-    /* overflow-y: scroll; */
     height: 100vh;
     font-family: 'Nanum Gothic Coding', monospace;
     color: white;
+
+	@media only screen and (max-width: 480px) {
+    height: 100svh;
+  }
+   
 }
 
 `;

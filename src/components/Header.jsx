@@ -1,24 +1,14 @@
-// import logo from "../assets/logo.svg";
 import styled from "styled-components";
 import { RiTreeLine } from "react-icons/ri";
 
 const Header = () => {
 	return (
 		<Headers>
-			<Nav className="navbar navbar-light bg-light">
+			<Nav>
 				<div>
-					<RiTreeLine style={{ color: "#d5cfcf", fontSize: "1.5rem" }} />
 					<h5>QUICK INSIGHTS</h5>
+					<RiTreeLine className="tree" />
 				</div>
-				{/* <button
-					className="btn btn-outline-light"
-					type="button"
-					onClick={() => {
-						window.open("https://github.com/iqrasy");
-					}}
-				>
-					Github
-				</button> */}
 			</Nav>
 		</Headers>
 	);
@@ -33,7 +23,6 @@ const Headers = styled.header`
 `;
 
 const Nav = styled.nav`
-	background-color: transparent !important;
 	width: 100%;
 	margin-bottom: 3rem;
 	padding-top: 1rem;
@@ -51,5 +40,24 @@ const Nav = styled.nav`
 	div {
 		display: flex;
 		align-items: center;
+	}
+
+	.tree {
+		color: white;
+		font-size: 1.5rem;
+		margin-left: 0.4rem;
+		margin-bottom: 0.2rem;
+	}
+
+	@media only screen and (max-width: 480px) {
+		h5 {
+			font-size: 0.8rem;
+		}
+
+		.tree {
+			font-size: 1rem;
+			margin-left: 0.4rem;
+			margin-bottom: 0.4rem;
+		}
 	}
 `;

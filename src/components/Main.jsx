@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Infinity from "../assets/Infinity.svg";
+import BeanEater from "../assets/BeanEater.svg";
 import { useLazyGetSummaryQuery } from "./FetchApi";
 import styled from "styled-components";
 import { LuCopy } from "react-icons/lu";
@@ -11,7 +11,8 @@ const Main = () => {
 	const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 	const [copied, setCopied] = useState("");
 
-	const MAX_CHARACTERS = 80;
+	const isMobile = window.innerWidth <= 768;
+	const MAX_CHARACTERS = isMobile ? 44 : 80;
 
 	useEffect(() => {
 		const storageArticles = JSON.parse(localStorage.getItem("articles"));
@@ -45,73 +46,65 @@ const Main = () => {
 	};
 
 	return (
-		<Div>
-			<Hone>
-				Summarize Articles with
-				<Span> OpenAI GPT-4</Span>
-			</Hone>
-			<Htwo>
-				Make your reading easier with QUICK INSIGHTS - an article summarizer
-				that turns lengthy articles into clear and concise summaries.
-			</Htwo>
-			<History>
-				<Form onSubmit={handleSubmit}>
-					<div>
-						<input
-							type="url"
-							placeholder="ENTER A URL"
-							value={article.url}
-							onChange={(e) => {
-								setArticle({ ...setArticle, url: e.target.value });
-							}}
-							required
-						/>
-					</div>
-					<button type="submit" className="btn btn-outline-dark">
-						<span>➤</span>
-					</button>
-				</Form>
-				<div>
-					<HistoryTag>History</HistoryTag>
-					<His>
-						{allArticles.map((item, i) => (
-							<div key={i} onClick={() => setArticle(item)}>
-								<Url onClick={() => handleCopy(item.url)}>
-									<p>
-										{item.url.length > MAX_CHARACTERS
-											? `${item.url.slice(0, MAX_CHARACTERS)}...`
-											: item.url}
-									</p>
-
-									{copied === item.url ? (
-										<BsCheck
-											style={{
-												marginRight: ".7rem",
-												color: "white",
-												fontSize: "1.5rem",
-											}}
-										/>
-									) : (
-										<LuCopy
-											style={{
-												marginRight: ".7rem",
-												color: "white",
-											}}
-										/>
-									)}
-								</Url>
+		<>
+			<div>
+				<Header>
+					Summarize Articles with
+					<Span> OpenAI GPT-4</Span>
+				</Header>
+				<SubHeading>
+					Make your reading easier with QUICK INSIGHTS - an article summarizer
+					that turns lengthy articles into clear and concise summaries.
+				</SubHeading>
+				<History>
+					<FormContainer>
+						<Form onSubmit={handleSubmit}>
+							<div>
+								<input
+									type="url"
+									placeholder="ENTER A URL"
+									value={article.url}
+									onChange={(e) => {
+										setArticle({ ...setArticle, url: e.target.value });
+									}}
+									required
+								/>
 							</div>
-						))}
-					</His>
+							<button type="submit" className="btn btn-outline-dark">
+								<span>➤</span>
+							</button>
+						</Form>
+						<div>
+							<UrlContainer>
+								{allArticles.map((item, i) => (
+									<div key={i} onClick={() => setArticle(item)}>
+										<Urls onClick={() => handleCopy(item.url)}>
+											<p>
+												{item.url.length > MAX_CHARACTERS
+													? `${item.url.slice(0, MAX_CHARACTERS)}...`
+													: item.url}
+											</p>
+
+											{copied === item.url ? (
+												<BsCheck className="check" />
+											) : (
+												<LuCopy className="copy" />
+											)}
+										</Urls>
+									</div>
+								))}
+							</UrlContainer>
+						</div>
+					</FormContainer>
 					<div>
 						{isFetching ? (
-							<img src={Infinity} alt="loader" />
+							<Img>
+								<img src={BeanEater} alt="infinity loader" />
+							</Img>
 						) : error ? (
-							<p>
-								That was not supposed to happen, Please try again
-								<br />
-								<span>{error?.data?.error}</span>
-							</p>
+							<Error>
+								<p>Oops... Please try again </p>
+							</Error>
 						) : (
 							article.summary && (
 								<Summary>
@@ -125,17 +118,15 @@ const Main = () => {
 							)
 						)}
 					</div>
-				</div>
-			</History>
-		</Div>
+				</History>
+			</div>
+		</>
 	);
 };
 
 export default Main;
 
-const Div = styled.div``;
-
-const Hone = styled.h1`
+const Header = styled.h1`
 	margin: 0 auto;
 	margin-top: 1rem;
 	font-weight: 800;
@@ -146,9 +137,14 @@ const Hone = styled.h1`
 	color: var(--text-200);
 	font-family: "Nippo", sans-serif;
 	flex-wrap: wrap;
+
+	@media only screen and (max-width: 480px) {
+		font-size: 1.5rem;
+		width: 45vh;
+	}
 `;
 
-const Htwo = styled.h2`
+const SubHeading = styled.h2`
 	padding-top: 1rem;
 	font-size: 1rem;
 	max-width: 70vh;
@@ -158,6 +154,11 @@ const Htwo = styled.h2`
 	max-width: 36rem;
 	font-family: "Quicksand", sans-serif;
 	flex-wrap: wrap;
+
+	@media only screen and (max-width: 480px) {
+		font-size: 0.8em;
+		width: 39vh;
+	}
 `;
 
 const Span = styled.span`
@@ -165,6 +166,15 @@ const Span = styled.span`
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 	-webkit-background-clip: text;
+`;
+
+const FormContainer = styled.div`
+	box-shadow: rgb(142, 142, 142) 0px 2px 2px -7px,
+		rgb(139, 139, 139) 0px 4px 10px -7px;
+
+	@media only screen and (max-width: 480px) {
+		width: 40vh;
+	}
 `;
 
 const Form = styled.form`
@@ -186,8 +196,7 @@ const Form = styled.form`
 	}
 
 	div {
-		width: 50rem;
-		box-shadow: rgba(99, 99, 99, 1) 0px 2px 8px 0px;
+		width: 80vh;
 		border: solid 1px var(--bg-400);
 		border-radius: 0.6rem;
 	}
@@ -195,11 +204,31 @@ const Form = styled.form`
 	input {
 		border: none;
 		outline: none;
-		width: 44rem;
+		width: 77vh;
 		padding: 0.4rem;
-		margin: 0.4rem 2.5rem;
+		margin: 0.4rem 1rem;
 		background-color: transparent;
-		color: #bdbdbd;
+		color: var(--text-200);
+	}
+
+	@media only screen and (max-width: 480px) {
+		margin-top: 1rem;
+
+		button {
+			height: 1.9rem;
+			color: var(--accent-200);
+		}
+
+		div {
+			width: 36vh;
+		}
+
+		input {
+			font-size: 0.6rem;
+			width: 35vh;
+			padding: 0rem;
+			margin: 0.4rem 0rem;
+		}
 	}
 `;
 
@@ -213,7 +242,6 @@ const Summary = styled.div`
 	width: 70vh;
 	margin-top: 2rem;
 	flex-wrap: wrap;
-	/* box-shadow: rgba(99, 99, 99, 1) 0px 2px 8px 0px; */
 
 	p {
 		height: 35vh;
@@ -222,6 +250,7 @@ const Summary = styled.div`
 		overflow-y: scroll;
 		padding: 2rem;
 		flex-wrap: wrap;
+		line-height: 2;
 	}
 
 	h2 {
@@ -234,6 +263,23 @@ const Summary = styled.div`
 		-webkit-text-fill-color: transparent;
 		-webkit-background-clip: text;
 	}
+
+	@media only screen and (max-width: 480px) {
+		width: 37vh;
+
+		h2 {
+			font-size: 1rem;
+		}
+
+		p {
+			height: 35vh;
+			width: 39vh;
+			padding: 0.5rem 0rem;
+			flex-wrap: wrap;
+			line-height: 2.3;
+			font-size: 0.8rem;
+		}
+	}
 `;
 
 const History = styled.div`
@@ -241,10 +287,9 @@ const History = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0 auto;
 `;
 
-const His = styled.div`
+const UrlContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -257,13 +302,22 @@ const His = styled.div`
 
 	p {
 		margin: 0 auto;
+		margin: 0.4rem 1rem;
 		width: 75vh;
 		color: var(--primary-200);
 		font-size: 0.9rem;
 	}
+
+	@media only screen and (max-width: 480px) {
+		p {
+			margin: 0rem;
+			width: 29vh;
+			font-size: 0.6rem;
+		}
+	}
 `;
 
-const Url = styled.div`
+const Urls = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -275,10 +329,27 @@ const Url = styled.div`
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+
+	.copy,
+	.check {
+		color: var(--text-200);
+	}
+
+	@media only screen and (max-width: 480px) {
+		width: 38vh;
+		padding: 0.6rem;
+	}
 `;
 
-const HistoryTag = styled.p`
-	color: var(--accent-100);
-	padding: 0rem 1rem;
+const Img = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
+const Error = styled.div`
+	display: flex;
+	justify-content: center;
+	margin: 0 auto;
 	margin-top: 2rem;
+	width: 50vh;
 `;
