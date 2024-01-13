@@ -30,6 +30,6 @@ const FooterContainer = styled.footer`
 		position: absolute;
 		text-align: center;
 		font-size: 0.6rem;
-		bottom: -4rem;
+		bottom: -5rem;
 	}
 `;
