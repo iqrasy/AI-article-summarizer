@@ -12,7 +12,7 @@ const Main = () => {
 	const [copied, setCopied] = useState("");
 
 	const isMobile = window.innerWidth <= 768;
-	const MAX_CHARACTERS = isMobile ? 44 : 80;
+	const MAX_CHARACTERS = isMobile ? 40 : 73;
 
 	useEffect(() => {
 		const storageArticles = JSON.parse(localStorage.getItem("articles"));
