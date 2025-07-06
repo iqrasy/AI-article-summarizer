@@ -1,6 +1,21 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
+@font-face {
+  font-family: 'ppneuebit-bold';
+    src: url('/fonts/ppneuebit-bold.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PPMondwest-regular';
+    src: url('/fonts/PPMondwest-regular.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 :root {
     --primary-100:#FF6600;
     --primary-200:#ff983f;
@@ -28,15 +43,9 @@ html {
 
 
 body {
-    background-color: var(--bg-100);
     height: 100vh;
-    font-family: 'Nanum Gothic Coding', monospace;
-    color: white;
-
-	@media only screen and (max-width: 480px) {
-    height: 100svh;
-  }
-   
+    width: 100vw;
+    margin: 0;
 }
 
 `;

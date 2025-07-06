@@ -1,5 +1,5 @@
-import Header from "./Header";
-import Main from "./Main";
+import Navbar from "./Navbar";
+import Main from "./ArticleSummary";
 import styled from "styled-components";
 import GlobalStyles from "./Globalstyle";
 import Footer from "./Footer";
@@ -8,12 +8,12 @@ const App = () => {
 	return (
 		<div>
 			<GlobalStyles />
-			<Header />
-			<Mains>
-				<Apps>
+			<MainContainer>
+				<InnerContainer>
+					<Navbar />
 					<Main />
-				</Apps>
-			</Mains>
+				</InnerContainer>
+			</MainContainer>
 			<Footer />
 		</div>
 	);
@@ -21,26 +21,20 @@ const App = () => {
 
 export default App;
 
-const Mains = styled.div`
+const MainContainer = styled.div`
+	height: 100vh;
+	width: 100vw;
+	background-color: black;
 	display: flex;
+	flex-direction: column;
+	align-items: center;
 	justify-content: center;
-
-	&:after {
-		content: "";
-		background-image: url("/src/assets/grid.svg");
-		z-index: -10;
-		position: fixed;
-		width: 100%;
-		height: 100vh;
-		opacity: 1;
-		filter: invert(1);
-	}
-
-	@media only screen and (max-width: 480px) {
-		height: 100svh;
-	}
 `;
 
-const Apps = styled.div`
-	z-index: 10;
+const InnerContainer = styled.div`
+	background-image: url("/src/assets/grid.svg");
+	background-color: #0c1220;
+	margin: 0 auto;
+	width: 900px;
+	height: 1000px;
 `;
