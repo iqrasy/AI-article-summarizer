@@ -23,7 +23,7 @@ const Header = styled.h1`
 	font-family: "Orbitron", sans-serif;
 	font-optical-sizing: auto;
 	font-style: normal;
-	color: #a9a9a9;
+	color: #7f7ec1;
 	font-size: 100px;
 	opacity: 0.7;
 `;

@@ -141,8 +141,8 @@ const Main = () => {
 						<Summary>
 							<ReactTyped
 								strings={[article.summary]}
-								typeSpeed={40}
-								style={{ color: "#a9a9a9" }}
+								typeSpeed={20}
+								style={{ color: "#7f7ec1" }}
 							/>
 						</Summary>
 					)}
@@ -184,7 +184,7 @@ const HeaderContainer = styled.div`
 const Header = styled.h1`
 	font-family: "ppneuebit-bold";
 	font-size: 45px;
-	color: #a9a9a9;
+	color: #7f7ec1;
 	margin: 0 auto;
 	font-weight: 800;
 	line-height: 0.9;
@@ -235,12 +235,13 @@ const RightSectionContainer = styled.div`
 const SummaryContainer = styled.div`
 	width: 100%;
 	height: 700px;
-	color: #a9a9a9;
+	color: #7f7ec1;
 	font-family: "ppneuebit-bold";
 	border: solid #a9a9a9 2px;
 	border-bottom-right-radius: 50px;
 	padding: 7px 20px;
 	background-color: #0b0d11;
+	opacity: 0.7;
 `;
 
 const Summary = styled.div`
@@ -327,6 +328,7 @@ const FaceImage = styled.img`
 const Paragraph = styled.p`
 	line-height: 1;
 	font-family: "ppneuebit-bold";
+	color: #7f7ec1;
 `;
 
 const EarthImageContainer = styled.div`
