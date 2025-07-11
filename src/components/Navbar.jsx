@@ -25,7 +25,7 @@ const Header = styled.h1`
 	font-style: normal;
 	color: #a9a9a9;
 	font-size: 100px;
-	opacity: 0.8;
+	opacity: 0.7;
 `;
 
 const Image = styled.img`

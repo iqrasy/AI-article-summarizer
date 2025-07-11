@@ -75,7 +75,7 @@ const AnimatedText = styled.div`
 	user-select: none;
 	white-space: pre;
 	text-align: center;
-	opacity: 0.8;
+	opacity: 0.7;
 `;
 
 const EarthContainer = styled.div`

@@ -8,6 +8,8 @@ import wavy from "../assets/wavy.png";
 import face from "../assets/face.png";
 import barcodetwo from "../assets/barcodetwo.png";
 import { ReactTyped } from "react-typed";
+import Lottie from "react-lottie";
+import loader from "../assets/loader.json";
 
 const Main = () => {
 	const [article, setArticle] = useState({ url: "", summary: "" });
@@ -46,6 +48,15 @@ const Main = () => {
 		} catch (error) {
 			console.error("Copy failed:", error);
 		}
+	};
+
+	const defaultOptions = {
+		loop: true,
+		autoplay: true,
+		animationData: loader,
+		rendererSettings: {
+			preserveAspectRatio: "xMidYMid slice",
+		},
 	};
 
 	return (
@@ -112,14 +123,28 @@ const Main = () => {
 					)}
 					{isFetching && (
 						<LoadingContainer>
-							<p>Please hold while I summarize this for you</p>
+							<Lottie
+								options={defaultOptions}
+								src={
+									"https://lottie.host/02d2d12b-7aa5-406d-aeb9-493e53e6fd3e/F3EYBYanhY.lottie"
+								}
+								style={{ width: "150px", height: "150px" }}
+								speed="1"
+								autoplay
+								loop
+							/>
 						</LoadingContainer>
 					)}
 
-					<Summary>
-						<ReactTyped strings={[article.summary]} typeSpeed={40} />
-						{/* {article.summary} */}
-					</Summary>
+					{article.summary && (
+						<Summary>
+							<ReactTyped
+								strings={[article.summary]}
+								typeSpeed={40}
+								style={{ color: "#a9a9a9" }}
+							/>
+						</Summary>
+					)}
 				</SummaryContainer>
 			</RightSectionContainer>
 		</MainContainer>
@@ -152,6 +177,7 @@ const HeaderContainer = styled.div`
 	border: solid #a9a9a9 2px;
 	border-bottom-left-radius: 50px;
 	border-top-right-radius: 50px;
+	background-color: #0b0d11;
 `;
 
 const Header = styled.h1`
@@ -183,6 +209,7 @@ const Input = styled.input`
 	background-color: transparent;
 	font-size: 23px;
 	width: 330px;
+	color: #a9a9a9;
 	font-family: "ppneuebit-bold";
 `;
 
@@ -207,11 +234,12 @@ const RightSectionContainer = styled.div`
 const SummaryContainer = styled.div`
 	width: 100%;
 	height: 700px;
-	color: #a0b9c0;
+	color: #a9a9a9;
 	font-family: "ppneuebit-bold";
 	border: solid #a9a9a9 2px;
 	border-bottom-right-radius: 50px;
 	padding: 7px 20px;
+	background-color: #0b0d11;
 `;
 
 const Summary = styled.div`
@@ -281,7 +309,7 @@ const BarcodeImage = styled.img`
 const FaceImage = styled.img`
 	margin-top: 10px;
 	height: 290px;
-	opacity: 0.9;
+	opacity: 0.7;
 	grid-area: 1 / 2 / 2 / 3;
 `;
 
