@@ -1,9 +1,12 @@
-# SUMMX
+# THE GIST
 
-I've developed a powerful SaaS article summarizer powered by ChatGPT-4. The frontend, built with React and Redux, offers a seamless user experience. With a strong focus on SEO, this application ensures that content is not only summarized efficiently but also optimized for search engine visibility.
+I built a web app, The Gist, that takes any article and instantly turns it into a simple, easy-to-read summary. It’s powered by ChatGPT-4, with a frontend built in React and Redux. What really makes it stand out is the UI. I went for a cyberpunk vibe with minimal colors, wireframes, and a futuristic layout that makes the experience feel unique and engaging.
 
-![](preview.png
-)
+![](preview.png)
+![](preview2.png)
+![](preview3.png)
+
+
 
 # 🛠️ set-up
 
