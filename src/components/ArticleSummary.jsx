@@ -123,6 +123,7 @@ const Main = () => {
 					)}
 					{isFetching && (
 						<LoadingContainer>
+							<p>Please hold while I summarize the article for you</p>
 							<Lottie
 								options={defaultOptions}
 								src={
@@ -255,22 +256,32 @@ const Summary = styled.div`
 
 const LoadingContainer = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	margin: 0 auto;
+	padding: 20px 0px;
 
 	p {
 		font-family: "ppneuebit-bold";
 		font-size: 40px;
+		line-height: 0.9;
 	}
 `;
 
 const Error = styled.div`
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
-	margin-top: 2rem;
-	width: 50vh;
+	padding: 20px 0px;
+
+	p {
+		font-family: "ppneuebit-bold";
+		font-size: 40px;
+		line-height: 0.9;
+	}
 `;
 
 const ImageContainer = styled.div`
