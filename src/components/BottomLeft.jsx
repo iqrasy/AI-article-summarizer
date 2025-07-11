@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import world from "../assets/world.png";
+import earth from "../assets/earth.png";
 import styled from "styled-components";
 
 const BottomLeft = () => {
@@ -30,7 +30,7 @@ const BottomLeft = () => {
 		<>
 			<ImageContainer>
 				<EarthContainer>
-					<EarthImage src={world} />
+					<EarthImage src={earth} />
 				</EarthContainer>
 				<HackerContainer>
 					<AnimatedText ref={textRef} />
@@ -53,19 +53,17 @@ const ImageContainer = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	gap: 10px;
-	/* border: solid red 1px; */
-	padding: 0 10px;
 `;
 
 const HackerContainer = styled.div`
 	width: 300px;
 	height: 130px;
-	border: 3px solid #ff00fe;
-	color: #ff00fe;
+	border: 1px solid #a9a9a9;
+	border-radius: 10px;
+	color: #a9a9a9;
 	font-family: "Courier New", monospace;
 	font-weight: bold;
-	font-size: 17px;
-	padding: 10px;
+	font-size: 13px;
 	overflow: hidden;
 	white-space: pre;
 `;
@@ -76,10 +74,13 @@ const AnimatedText = styled.div`
 	line-height: 1.2;
 	user-select: none;
 	white-space: pre;
+	text-align: center;
+	opacity: 0.8;
 `;
 
 const EarthContainer = styled.div`
-	border: solid #ff00fe 3px;
+	border: solid #a9a9a9 1px;
+	border-radius: 10px;
 	padding: 10px;
 `;
 
@@ -104,7 +105,7 @@ const IconContainer = styled.div`
 	flex-direction: column;
 
 	p {
-		color: #a0b9c0;
+		color: #a9a9a9;
 		font-size: 30px;
 	}
 `;

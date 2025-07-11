@@ -32,7 +32,7 @@ const MainContainer = styled.div`
 `;
 
 const InnerContainer = styled.div`
-	background-image: url("/src/assets/grid.svg");
+	background-image: url("/src/assets/background.jpg");
 	background-color: #0c1220;
 	margin: 0 auto;
 	width: 900px;

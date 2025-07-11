@@ -1,13 +1,10 @@
 import styled from "styled-components";
 
 const Footer = () => {
-	const date = new Date();
-	const year = date.getFullYear();
-
 	return (
 		<FooterContainer>
 			<div>
-				<p>Built and Designed by Iqra Imran Syed {year}</p>
+				<p>Built and Designed by Iqra Imran Syed</p>
 			</div>
 		</FooterContainer>
 	);
@@ -21,10 +18,12 @@ const FooterContainer = styled.footer`
 	left: 0;
 	right: 0;
 	width: 100%;
-	font-size: 0.7rem;
-	color: var(--accent-200);
+	font-size: 20px;
 	text-align: center;
 	flex-wrap: wrap;
+	color: #a9a9a9;
+	font-family: "ppneuebit-bold";
+	letter-spacing: 0.7px;
 
 	@media only screen and (max-width: 480px) {
 		position: absolute;
