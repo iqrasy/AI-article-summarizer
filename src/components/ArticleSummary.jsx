@@ -179,6 +179,7 @@ const HeaderContainer = styled.div`
 	border-bottom-left-radius: 50px;
 	border-top-right-radius: 50px;
 	background-color: #0b0d11;
+	opacity: 0.7;
 `;
 
 const Header = styled.h1`
@@ -190,7 +191,6 @@ const Header = styled.h1`
 	line-height: 0.9;
 	flex-wrap: wrap;
 	padding: 20px;
-	opacity: 0.7;
 `;
 
 const Form = styled.form`
